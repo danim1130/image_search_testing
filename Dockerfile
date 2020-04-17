@@ -13,6 +13,6 @@ COPY . /usr/src/app
 
 EXPOSE 8080
 
-CMD gunicorn -b 0.0.0.0:8080 -w $(cat /proc/cpuinfo | grep processor | wc -l) --max-requests 10 --max-requests-jitter 4 --timeout 120 main
+CMD gunicorn -b 0.0.0.0:8080 -w $(cat /proc/cpuinfo | grep processor | wc -l) --max-requests 10 --max-requests-jitter 4 --timeout 20 main
 
 
