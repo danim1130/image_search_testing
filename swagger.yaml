@@ -1,0 +1,39 @@
+swagger: "2.0"
+info:
+  title: "Image Check"
+  version: "1.0.0"
+basePath: "/api"
+schemes:
+- "http"
+produces:
+- "application/json"
+paths:
+  /checkImage:
+    post:
+      consumes: 
+      - "application/json"
+      parameters: 
+      - name: "body"
+        in: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/CheckBody"
+      responses:
+        200:
+          description: "Result"
+          schema:
+            $ref: "#/definitions/CheckResponse"
+
+definitions:
+  CheckBody:
+    type: "object"
+    properties:
+      imageUrl:
+        type: string
+  CheckResponse:
+    type: "object"
+    properties:
+      accepted_num:
+        type: integer
+    example:
+      accepted_num: 1

@@ -1,0 +1,43 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0.0"
+  title: "Image Check"
+basePath: "/api"
+schemes:
+- "http"
+produces:
+- "application/json"
+paths:
+  /checkImage:
+    post:
+      operationId: "check_image_post"
+      consumes:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        required: true
+        schema:
+          $ref: "#/definitions/CheckBody"
+      responses:
+        "200":
+          description: "Result"
+          schema:
+            $ref: "#/definitions/CheckResponse"
+      x-swagger-router-controller: "swagger_server.controllers.default_controller"
+definitions:
+  CheckBody:
+    type: "object"
+    properties:
+      imageUrl:
+        type: "string"
+    example:
+      imageUrl: "imageUrl"
+  CheckResponse:
+    type: "object"
+    properties:
+      accepted_num:
+        type: "integer"
+    example:
+      accepted_num: 1
