@@ -2,7 +2,7 @@ connexion == 2.6.0
 python_dateutil == 2.6.0
 setuptools >= 21.0.0
 Flask == 1.0.0
-numpy == 1.14.2
+numpy == 1.22.0
 opencv-python == 3.4.0.12
 opencv-contrib-python == 3.4.0.12
 gunicorn == 19.9.0
